@@ -1,0 +1,181 @@
+:root {
+  --swiper-navigation-size: 27px !important;
+  --swiper-theme-color: lightcyan !important;
+  --swiper-theme-color-hover: rgb(141, 209, 255) !important;
+  --swiper-scrollbar-drag-bg-color: lightcyan !important;
+  --swiper-pagination-bullet-inactive-opacity: .5 !important;
+  --swiper-navigation-sides-offset: -30px !important;
+  --swiper-pagination-bottom: -25px !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100vh;
+}
+
+body {
+  background-color: grey;
+}
+
+.main {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__modal {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background: rgb(0 0 0 / 50%);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s;
+}
+
+.main__modal.active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.main__modal-image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.main__modal-button {
+  position: relative;
+  background-color: lightcyan;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid lightcyan;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    background-color: var(--swiper-theme-color-hover);
+  }
+}
+
+.main__button {
+  position: relative;
+  margin-left: auto;
+  background-color: lightcyan;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid lightcyan;
+  cursor: pointer;
+  transition: .3s;
+  @media (max-width: 540px) {
+    width: 100%;
+  }
+}
+
+.main__button:hover {
+  background-color: var(--swiper-theme-color-hover);
+}
+
+.main__button input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.main__button-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  user-select: none;
+}
+
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 4px solid rgb(141, 209, 255);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  aspect-ratio: 5/1;
+
+  @media (max-width: 1200px) {
+    aspect-ratio: 4/1;
+  }
+
+  @media (max-width: 960px) {
+    aspect-ratio: 3/1;
+  }
+
+  @media (max-width: 768px) {
+    aspect-ratio: 2/1;
+  }
+}
+
+.swiper-slide {
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+  }
+}
+
+.swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet {
+  transition: .3s;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  color: var(--swiper-theme-color-hover);
+}
+
+.swiper-pagination-bullet {
+  background: var(--swiper-theme-color) !important;
+}
+
+.swiper-pagination-bullet:hover {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% { 
+    transform: translate(-50%, -50%) rotate(0deg); 
+  }
+  100% { 
+    transform: translate(-50%, -50%) rotate(360deg); 
+  }
+}

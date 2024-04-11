@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карусель</title>
+</head>
+<body>
+  <div class="main">
+    <div class="main__modal">
+      <img src="" alt="" class="main__modal-image" id="modalImage" loading="lazy">
+      <button class="main__modal-button">Удалить фотографию</button>
+    </div>
+    <label class="main__button" for="imageAdd" >
+      <input type="file" name="imageAdd" id="imageAdd">
+      <span class="main__button-text" id="imageAddSpan">
+        Загрузить фотографию
+      </span>
+    </label>
+    <div class="slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    
+  </div>
+</body>
+</html>

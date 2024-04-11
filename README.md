@@ -16,11 +16,9 @@ npm i
 ## 2. Команды для запуска
 
 ```bash
-
-`server`:
-cd server
 npm run dev
 
-`client`:
 cd ../client
+npm run build
 npm run start
+```
